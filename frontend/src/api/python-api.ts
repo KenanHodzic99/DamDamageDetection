@@ -1,6 +1,6 @@
 import {jsonHeaders} from "./backend";
 
-const pythonBackendUrl = "http://localhost:5000"
+const pythonBackendUrl = "http://192.168.0.25:5000"
 
 export function getScanTime() {
     return fetch(pythonBackendUrl + "/scan/time", {

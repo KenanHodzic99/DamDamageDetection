@@ -87,33 +87,33 @@ const DamageAnalytics = () => {
         let counter = startNumber + increment
         if(damagedSectors.includes(startNumber)){
             columns.push(
-                <Grid item xs={1}><Typography style={{backgroundColor:"red", textAlign: "center",color:"white", border:"2px solid rgb(33, 42, 62)", borderRadius:"4px", padding:"10px"}}>{startNumber}</Typography></Grid>
+                <Grid item xs={0.1333}><Typography style={{backgroundColor:"red", textAlign: "center",color:"white", border:"2px solid rgb(33, 42, 62)", padding:"4px", margin:"2px"}}>{startNumber}</Typography></Grid>
             )
         } else {
             columns.push(
-                <Grid item xs={1}><Typography style={{backgroundColor:"white", textAlign: "center",color:"rgb(33, 42, 62)", border:"2px solid rgb(33, 42, 62)", borderRadius:"4px", padding:"10px"}}>{startNumber}</Typography></Grid>
+                <Grid item xs={0.1333}><Typography style={{backgroundColor:"white", textAlign: "center",color:"rgb(33, 42, 62)", border:"2px solid rgb(33, 42, 62)", padding:"4px", margin:"2px"}}>{startNumber}</Typography></Grid>
             )
         }
         if(damagedSectors.includes(counter)){
             columns.push(
-                <Grid item xs={1}><Typography style={{backgroundColor:"red", textAlign: "center",color:"white", border:"2px solid rgb(33, 42, 62)", borderRadius:"4px", padding:"10px"}}>{counter}</Typography></Grid>
+                <Grid item xs={0.1333}><Typography style={{backgroundColor:"red", textAlign: "center",color:"white", border:"2px solid rgb(33, 42, 62)", padding:"4px", margin:"2px"}}>{counter}</Typography></Grid>
             )
         } else {
             columns.push(
-                <Grid item xs={1}><Typography style={{backgroundColor:"white", textAlign: "center",color:"rgb(33, 42, 62)", border:"2px solid rgb(33, 42, 62)", borderRadius:"4px", padding:"10px"}}>{counter}</Typography></Grid>
+                <Grid item xs={0.1333}><Typography style={{backgroundColor:"white", textAlign: "center",color:"rgb(33, 42, 62)", border:"2px solid rgb(33, 42, 62)", padding:"4px", margin:"2px"}}>{counter}</Typography></Grid>
             )
         }
 
 
-        for(let i=0; i<10; i++){
+        for(let i=0; i<88; i++){
             counter += increment
             if(damagedSectors.includes(counter)){
                 columns.push(
-                    <Grid item xs={1}><Typography style={{backgroundColor:"red", textAlign: "center",color:"white", border:"2px solid rgb(33, 42, 62)", borderRadius:"4px", padding:"10px"}}>{counter}</Typography></Grid>
+                    <Grid item xs={0.1333}><Typography style={{backgroundColor:"red", textAlign: "center",color:"white", border:"2px solid rgb(33, 42, 62)", padding:"4px", margin:"2px"}}>{counter}</Typography></Grid>
                 )
             } else {
                 columns.push(
-                    <Grid item xs={1}><Typography style={{backgroundColor:"white", textAlign: "center",color:"rgb(33, 42, 62)", border:"2px solid rgb(33, 42, 62)", borderRadius:"4px", padding:"10px"}}>{counter}</Typography></Grid>
+                    <Grid item xs={0.1333}><Typography style={{backgroundColor:"white", textAlign: "center",color:"rgb(33, 42, 62)", border:"2px solid rgb(33, 42, 62)", padding:"4px", margin:"2px"}}>{counter}</Typography></Grid>
                 )
             }
         }
@@ -122,7 +122,7 @@ const DamageAnalytics = () => {
 
     return (loading ? <CircularProgress /> :
             <>
-            <Grid container spacing={3}>
+            <Grid style={{maxWidth: "35%"}} container spacing={3}>
                 {makeCards()}
             </Grid>
                 <Box>
@@ -130,27 +130,33 @@ const DamageAnalytics = () => {
                         <h2>Sector map legend:</h2>
                         <ul>
                             <li>Red sectors are sectors that have damage reported on them</li>
-                            <li>The sectors are the size of ten square meters</li>
-                            <li>The displayed map takes into account a dam of 100m x 110m</li>
+                            <li>The sectors are the size of one square meter</li>
+                            <li>The displayed map takes into account a dam of 16m x 90m</li>
                             <li>Sectors are an approximation of location to help narrow down the search and should not be taken literally</li>
                             <li>Sector locations by number are as displayed on the map.</li>
                         </ul>
                     </Box>
-                    <Grid style={{marginTop: "20px", marginBottom: "20px", paddingBottom:"10px", paddingRight:"10px", border:"2px solid rgb(33, 42, 62)", borderRadius: "4px"}} container spacing={1}>
-                        {makeMapRow(1,1)}
-                        {makeMapRow(24,-1)}
-                        {makeMapRow(25,1)}
-                        {makeMapRow(48,-1)}
-                        {makeMapRow(49,1)}
-                        {makeMapRow(72,-1)}
-                        {makeMapRow(73,1)}
-                        {makeMapRow(96,-1)}
-                        {makeMapRow(97,1)}
-                        {makeMapRow(120,-1)}
-                    </Grid>
-                    <Box style={{height: "50px", width: "full"}}>
+                </Box>
+                <Grid xs={true} style={{width: "4100px",marginTop: "20px", marginBottom: "20px", padding:"5px", border:"2px solid rgb(33, 42, 62)", borderRadius: "4px"}} container spacing={0}>
+                    {makeMapRow(1,1)}
+                    {makeMapRow(180,-1)}
+                    {makeMapRow(181,1)}
+                    {makeMapRow(360,-1)}
+                    {makeMapRow(361,1)}
+                    {makeMapRow(540,-1)}
+                    {makeMapRow(541,1)}
+                    {makeMapRow(720,-1)}
+                    {makeMapRow(721,1)}
+                    {makeMapRow(900,-1)}
+                    {makeMapRow(901,1)}
+                    {makeMapRow(1080,-1)}
+                    {makeMapRow(1081,1)}
+                    {makeMapRow(1260,-1)}
+                    {makeMapRow(1261,1)}
+                    {makeMapRow(1440,-1)}
+                </Grid>
+                <Box style={{height: "50px", width: "full"}}>
 
-                    </Box>
                 </Box>
             </>
     )
